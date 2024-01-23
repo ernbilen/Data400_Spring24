@@ -1,6 +1,6 @@
 # DATA 400: Capstone in Data Analytics (Spring 2024) #
 
-|  | [Eren Bilen](http://ernbilen.github.io) |
+|  | [Eren Bilen](http://ernbilen.github.io) | Student: Amanda Tran
 |--------------|--------------------------------------------------------------|
 | Email | [bilene@dickinson.edu](mailto:bilene@dickinson.edu) |
 | Office | Althouse 104 |
