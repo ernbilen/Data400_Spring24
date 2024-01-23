@@ -1,3 +1,4 @@
+TEST
 # DATA 400: Capstone in Data Analytics (Spring 2024) #
 
 |  | [Eren Bilen](http://ernbilen.github.io) |
@@ -9,7 +10,6 @@
 
 * **Meeting day/time**: T-F S1 1:30-2:45pm, S2 3-4:15pm @Althouse G7
 * Office hours also available by appointment.
-
 
 ## Course description ##
 
@@ -65,3 +65,4 @@ Class participation          |   10   |    10.0%   |
 ## Reasonable Accommodations for Students with Disabilities: ##
 
 If you have any condition, such as a physical or learning disability, which will make it difficult for you to carry out the work as I have outlined it or which will require academic accommodations, please notify me through email with the appropriate documentation during the first two weeks of the course.
+
