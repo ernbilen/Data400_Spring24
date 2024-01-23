@@ -1,5 +1,7 @@
 # DATA 400: Capstone in Data Analytics (Spring 2024) #
 
+Han Nguyen
+
 |  | [Eren Bilen](http://ernbilen.github.io) |
 |--------------|--------------------------------------------------------------|
 | Email | [bilene@dickinson.edu](mailto:bilene@dickinson.edu) |
