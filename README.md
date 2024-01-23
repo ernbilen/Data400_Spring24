@@ -1,4 +1,5 @@
 # DATA 400: Capstone in Data Analytics (Spring 2024) #
+Hey, this is Billy!
 
 |  | [Eren Bilen](http://ernbilen.github.io) |
 |--------------|--------------------------------------------------------------|
