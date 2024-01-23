@@ -1,0 +1,154 @@
+---
+title: "DATA 400: Data Analytics Capstone"
+from: markdown+emoji
+author: "Eren Bilen"
+institute: "Dickinson College"
+date: '`r format(Sys.Date(), "%B %d, %Y")`'
+format:
+  revealjs:
+    theme: [default,custom.scss]
+    incremental: false
+    logo: "assets/dickinson_logo.jpg"
+    footer: "[github.com/ernbilen/Data400_Spring24](https://github.com/ernbilen/Data200_Spring23)"
+    fontsize: 2em
+    highlight-style: github
+    slide-number: c/t
+    history: false
+    chalkboard: 
+      boardmarker-width: 5
+editor_options: 
+  markdown: 
+    wrap: 72
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
+```
+
+
+# Git & Github
+
+-   Git is an open source version control language, developed in 2005.
+    -   GitHub is a cloud-based hosting service that lets you manage Git
+        repositories
+        -   Extremely widely used in the industry
+        -   Similar to Dropbox, OneDrive, but is more sophisticated for
+            collaborative work: *version control*
+
+# Git & Github
+
+-   The files are stored in a "repository", or "repo" that are simply
+    folders containing the files for a project.
+    -   Suppose you want to contribute to the TheGreatestApp repo.
+        -   You first "fork" the repo, which is a way to "clone" the
+            original repo files, which creates an identical repo under
+            your account's name.
+
+# Git & Github
+
+-   You work on your great idea to improve the app locally, and edit the
+    files in your clone repo.
+    -   Once you are done, you first "commit" your changes.
+        -   "Commit"ing basically is a manual way of overwriting files.
+    -   Then you push your changes to your clone repo such that the
+        files are modified and uploaded.
+
+# Git & Github
+
+-   Note that nothing has happened to the original repo so far.
+    -   You finally send a "pull request" to the owner of the original
+        repo.
+        -   A pull request automatically shows the account owner what
+            changes you have made in a nice intuitive side-by-side
+            window.
+        -   You can add a message at this stage and communicate.
+
+# Git & Github
+
+![](assets/img/image21.png){width="70%" height="70%"}
+
+# Git & Github
+
+-   After setting your own local repo via "fork"
+    -   commit
+    -   push
+    -   pull request
+
+# Git & Github
+
+![](assets/img/image22.png)
+
+# Git & Github
+
+![](assets/img/image23.png)
+
+# Git & Github
+
+-   You can use browser, GitHub Desktop App, or command line to interact
+    with your repo ![](assets/img/image23.png)
+
+# Git & Github
+
+-   Edits will be displayed on the interface, after which you can press
+    "commit to master", i.e. to your local repository.
+    ![](assets/img/image24.png)
+
+# Git & Github
+
+-   You are now ready to "push commits to the origin remote", this time
+    to your "cloud" repository. ![](assets/img/image25.png)
+
+# Git & Github
+
+-   To send your changes to the owner of the original repo, click on
+    "create pull request". ![](assets/img/image26.png)
+
+# Git & Github
+
+-   You can write a comment and explain your reasoning in updating the
+    code on this screen. ![](assets/img/image27.png)
+
+# Git & Github: command line
+
+-   After setting your own local repo via "fork" or "clone"
+    -   add files (only for command line) `>git add --all`
+    -   commit `>git commit --m "descriptive message"`
+        -   You can run `>git status` to check which files are changed
+    -   push `>git push`
+    -   pull request `>git pull`
+
+For more git commands: <br>
+<https://about.gitlab.com/images/press/git-cheat-sheet.pdf>
+
+# Github Classroom
+
+-   IMPORTANT!:warning: We will use Github Classroom to make things more
+    efficient and easier. (free service)
+    -   After setting your own local repo via "fork" or "clone"
+            
+# Github Classroom
+
+-   IMPORTANT!:warning: We will use Github Classroom to make things more
+    efficient and easier. (free service)
+    -   <s>After setting your own local repo via "fork" or "clone"</s>
+        -   You will receive an invitation email for each assignment.
+        -   Accepting the invitation automatically forks my repo and
+            creates your own local clone repo.
+        -   You can work on your assignment in your local repo, do any
+            edits.
+
+        
+# Github Classroom
+
+-   Once you have your local repo, you can use the Github Desktop app,
+    or any browser to upload your assignment via
+    -   commit
+    -   push
+    -   <s>pull request:</s> Also automated. Once you push your files to your
+        local repo, everything gets delivered automatically.
+
+#
+![](assets/img/image28.png)
+
+#
+![](assets/img/image29.jpeg)
