@@ -1,4 +1,4 @@
-# DATA 400: Capstone in Data Analytics (Spring 2024) #  Ben Tomick has been here again 
+# DATA 400: Capstone in Data Analytics (Spring 2024) #  Ben Tomick Test
 
 |  | [Eren Bilen](http://ernbilen.github.io) |
 |--------------|--------------------------------------------------------------|
