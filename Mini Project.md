@@ -12,3 +12,4 @@
 ## **Idea 3**. Does microloans help lift women and/or women-headed households out of poverty? ##
 * Problemns: data
 * Novelty: It is already studied, but not so much in this specific branch.
+* Interesting: relate to CRA
