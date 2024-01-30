@@ -13,3 +13,6 @@
 * Problemns: data
 * Novelty: It is already studied, but not so much in this specific branch.
 * Interesting: relate to CRA
+
+- Economy course sequence: anything company related, consumers, users.
+- 1-page explanation: motivation (why, potential implications), data strategy, rubric -> clearly outlined. Submit before class on Friday. Should be a .md
