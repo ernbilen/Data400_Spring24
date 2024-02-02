@@ -5,8 +5,10 @@
 - **Significance**: This study aims to provide insights into the effectiveness of Music Therapy (MT) in managing stress, mood, and overall mental health. It could potentially inform more targeted MT interventions.
 
 ## Literature Review
-- Summarize existing research on Music Therapy and its impact on mental health.
-- Discuss previous findings on the relationship between music preferences and psychological well-being.
+- There is tremendous research pointing out that music is powerful in pain-relieving and stress-decreasing.Below are example reseraches
+- The Effects of Music on Pain: A Meta-Analysis : DOI: 10.1093/jmt/thw012
+- Music therapy for depression : DOI: 10.1002/14651858.CD004517.pub3
+
 
 ## Research Questions
 - What correlations exist between music genre preferences and self-reported levels of Anxiety, Depression, Insomnia, and OCD?
