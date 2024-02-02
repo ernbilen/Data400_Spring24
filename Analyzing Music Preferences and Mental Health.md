@@ -5,7 +5,7 @@
 - **Significance**: This study aims to provide insights into the effectiveness of Music Therapy (MT) in managing stress, mood, and overall mental health. It could potentially inform more targeted MT interventions.
 
 ## Literature Review
-- There is tremendous research pointing out that music is powerful in pain-relieving and stress-decreasing.Below are example reseraches
+- There is tremendous research pointing out that music is powerful in pain-relieving, stress-decreasing, and sleep probelems.Below are example reseraches
 - The Effects of Music on Pain: A Meta-Analysis : DOI: 10.1093/jmt/thw012
 - Music therapy for depression : DOI: 10.1002/14651858.CD004517.pub3
 
