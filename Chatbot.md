@@ -8,24 +8,20 @@ Our journey dives deep into the rich tapestry of your chat history, transforming
 
 
 # Project Plan
-
-## Project Overview
+## Overview
 
 - **Objective:** Develop a chatbot that accurately mimics the communication style of your girlfriend, based on the analysis of your chat history in WeChat.
 - **Technologies:** Natural Language Processing (NLP), Machine Learning (ML), Deep Learning (DL).
 
 ## Data Collection & Preparation
 
-1. **Export Chat History:**
-   - Extract the chat history from WeChat, ensuring it's in a readable and processable format (e.g., CSV).
-
-2. **Data Cleaning:**
+1. **Data collection and cleaning:**
+   - Extract the chat history from WeChat in a CSV file.
    - Remove sensitive information and any irrelevant content.
    - Standardize text data (e.g., handling of emojis, capitalization).
 
-3. **Data Preprocessing:**
+2. **Data Preprocessing:**
    - Tokenization: Break text into sentences, words, or phrases.
-   - Lemmatization: Convert words to their base form.
    - Removal of stop words: Filter out common words that add little semantic value.
 
 ## Feature Engineering
