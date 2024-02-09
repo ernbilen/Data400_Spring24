@@ -1,0 +1,12 @@
+---
+title: 'Idea #2'
+output: pdf_document
+---
+
+**Introduction:** Accurately evaluating the potential of basketball players is a formidable challenge for NBA scouts, where the consequences of draft busts or overlooking future MVPs can have substantial financial implications for organizations. To address this challenge, this project would employs analytics and machine learning techniques to enhance the player evaluation process and improve decision-making in the NBA draft.
+
+**Methods:** This project would use a publicly available dataset of player statistics from 1998-2022 and NBA draft combine metrics from 2012-2016, accessible on data.world. The analysis would consider multiple response variables, including player longevity (examined through survival analysis, probably a tree based model), games (and minutes) played, and game statistics. A comprehensive weighted model incorporating additional metrics such as assists, blocks, steals, and rebounding will be explored to provide a holistic assessment of player performance.
+
+The methodology involved would likely be LASSO (Least Absolute Shrinkage and Selection Operator) technique to identify and select influential variables specific to each player position. This approach aims to streamline the evaluation process and identify the most critical factors contributing to a player's potential success in the NBA. By utilizing statistical techniques and machine learning algorithms, the project seeks to identify key physical traits for success and logevity in the NBA.
+
+**Implications:** This research would have significance for NBA organizations, scouts, and the broader basketball community. By identifying the key performance indicators that correlate with player success, and health, the model developed in this project has the potential to revolutionize the player evaluation process during the NBA draft.For NBA organizations, the insights gained from this project can significantly mitigate the risks associated with drafting by providing a data-driven foundation for decision-making.
