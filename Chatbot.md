@@ -31,6 +31,17 @@ Our journey dives deep into the rich tapestry of your chat history, transforming
 
 2. **Vectorization:**
    - Convert text data into numerical format using techniques like TF-IDF or word embeddings for ML/DL processing.
+   -Vectorization is the process of turning text into numbers so that computers can understand it. It's like translating words into a language that algorithms can work with. Here are two common ways to do this:
+
+### TF-IDF
+- **TF-IDF** stands for "Term Frequency-Inverse Document Frequency." It's a way to measure how important a word is in a document, considering how often it appears in that document and in all other documents. If a word appears a lot in one document but not much in others, it's considered important for that document.
+
+### Word Embeddings
+- **Word Embeddings** are a more advanced method that represents words as dense vectors (lists of numbers) in a way that captures the meanings of words and their relationships to other words. For example, in the space created by these vectors, words that have similar meanings are closer together.
+
+Both methods help machines understand text by converting words into numbers, but word embeddings provide a richer understanding of word meanings and relationships.
+
+
 
 ## Model Selection & Training
 
