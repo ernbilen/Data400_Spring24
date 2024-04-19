@@ -1,20 +1,38 @@
 # Decoding Dropout Rates: A Quantitative Analysis of High School Students’ Retention Rate based on Social Factors & Perception of Schooling #
 
 ## Introduction ##
-High school dropout rates are influenced by a complex web of factors, and understanding these dynamics is crucial for addressing this persistent challenge. Let's dive a little deeper into the key elements at play.
+High school dropout rates are influenced by a complex web of factors, and understanding these dynamics is crucial for addressing this persistent challenge. Let's dive a little deeper into the key elements at play!
 
 One significant factor is the students' perceptions of their school environment and the relationships they form with their peers. Research has shown that students who feel unsafe at school or experience peer rejection and isolation are at a much higher risk of dropping out (Cueller et al., 2017). When students don't feel a sense of belonging or support within the school community, it can lead to disengagement and a higher likelihood of them leaving the education system prematurely. Closely tied to the issue of school climate is also the problem of chronic absenteeism. This is often linked to safety concerns and other challenges that students face, and it has been identified as a strong predictor of school dropout (School Dropouts — The Civil Rights Project at UCLA, n.d.). When students are frequently absent from school, they miss out on crucial learning opportunities and can quickly fall behind, further contributing to their decision to leave school.
 
 Meanwhile, a hidden factor that can contribute to high school dropout rates is the potential disconnect between how schools define success and how students themselves define it. Schools often focus on metrics like test scores and graduation rates, while students may place more value on feeling supported, having a sense of belonging, and finding relevance in their education (DeLuca & Rosenbaum, 2000). When these definitions don't align, students can become disengaged and ultimately decide to leave school, as they may not see the value in the educational system as it is currently structured.
 
-By understanding these multifaceted factors, we can work towards developing more holistic and student-centered approaches to addressing the high school dropout crisis. It's a complex issue, but by addressing the needs of students and creating more inclusive and supportive school environments, we can help more young people succeed and reach their full potential.
+By understanding these multifaceted factors, we can work towards developing more holistic and student-centered approaches to addressing the high school dropout crisis!
 
 ## Data ##
-Using data from the NCES’s National Longitudinal Study 2002-2012, we analyze factors like school environment perception, safety, attendance, and participation in learning enhancements. Employing statistical methods such as Chi-squared tests, logistic regression, and decision trees, we develop a framework aiding counselors in identifying dropout risks and supporting students in achieving their life goals. 
+Originally from the NCES’s National Longitudinal Study 2002-2012, the dataset used for this project were student-level survey responses administered in 2002 (when students in the study were enrolled in 9th grade) and a follow-up survey administered in 2004 (when these students, if remained on a typical high school track, would be entering 12th grade). The original dataset contained over 16,000 observations of 146 variables.
+
+The packages used for this project are listed below:
+
+```R
+library(broom)
+library(caret)
+library(dplyr)
+library(lmtest)
+library(ggplot2)
+library(DMwR2)
+library(ROSE)
+library(randomForest)
+library(rpart)
+library(rpart.plot)
+library(partykit)
+library(shiny)
+library(shinydashboard)
+```
 
 ## Data Dictionary ##
 
-After selecting relevant variables and filtering data with valid drop out status, we have the new sample with 13,914 obs and 143 variables. We then filter out the sample with non-missing data. Below are the summary statistics of the 10 representative variables in the new sample.
+After selecting relevant variables and filtering data with valid drop out status, we have the new sample with 13,914 observations and 143 variables. We then filter out the sample with non-missing data. Below are the summary statistics of the 10 representative variables in the new sample.
 
 Variable   |   Obs    |   Unique  |   Mean    |   Min  |   Max     | Label                                                                                                                       |
 -----------|----------|-----------|-----------|--------|---------- |-----------------------------------------------------------------------------------------------------------------------------|
@@ -30,6 +48,41 @@ bys56      |   4,936   |      5    |   5.627   |    3   |    7     | How far in 
 f1doqflg   |   4936   |      2    |   0.019   |    0   |    1     | Dropout status (=1 if drop out, =0 otherwise)                                                                              |
 
 ## EDA ##
+## 1. What is the proportion of students who dropped out by 12th grade?
+```R
+ggplot(df, aes(x = "", y = counts, fill = category)) +
+  geom_bar(width = 1, stat = "identity", color = "white") +
+  coord_polar("y", start = 0) +
+  ggtitle("DIstribution of Student's status by first Follow-up") +
+  theme_void() +
+  theme(legend.position = "right") +
+  labs(fill = "")
+```
+
+## 2. How do 9th-grade students feel about different life values?
+```R
+labels <- c("Success in work", "Marry right person", "Having money", "Strong friendships", "Steady work", 
+            "Helping community", "Children's opportunities", "Living close to relatives", "Getting away", 
+            "Correct inequalities", "Having children", "Leisure time", "Expert in work", "Good education")
+
+# Melt the dataframe to bring it to long format for visualization
+baseyear_melt <- melt(baseyear, measure.vars = c("BYS54A", "BYS54B", "BYS54C", "BYS54D", "BYS54E", "BYS54F", 
+                                                 "BYS54G", "BYS54H", "BYS54I", "BYS54J", "BYS54K", "BYS54L", 
+                                                 "BYS54N", "BYS54O"))
+
+# Change the variable levels to the shortened labels
+levels(baseyear_melt$variable) <- labels
+
+# Plot
+ggplot(baseyear_melt, aes(x = variable, fill = factor(value))) +
+  geom_bar(position = "stack", na.rm = TRUE) +
+  scale_fill_discrete(labels = c("Not important", "Somewhat important", "Very important")) + # replace with your desired labels
+  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
+  labs(x = "", y = "Student Count", fill = "I find this...") +
+  ggtitle("How much importance I placed on...")
+```
+
+
 
 ## Analysis ##
 ### Logistic Regression: Identify students’ risk of dropping out ###
