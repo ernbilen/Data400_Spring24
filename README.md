@@ -58,6 +58,9 @@ ggplot(df, aes(x = "", y = counts, fill = category)) +
   theme(legend.position = "right") +
   labs(fill = "")
 ```
+![Distribution of Student's status by first Follow-up](https://github.com/mandachan-727/Data400_Spring24/assets/85417121/5e252c6a-f436-40a8-9ba2-fa3f9c5dec92)
+
+Suprisingly, the proportion of dropouts within our sample is 6% less than the 10.3% rate recorded by NCES in 2004! We'll tackle this imbalance as we move forward with analysis.
 
 ## 2. How do 9th-grade students feel about different life values?
 ```R
@@ -82,7 +85,9 @@ ggplot(baseyear_melt, aes(x = variable, fill = factor(value))) +
   ggtitle("How much importance I placed on...")
 ```
 
+![Life Values DIst](https://github.com/mandachan-727/Data400_Spring24/assets/85417121/fbd634c1-e093-4ef9-96e1-3852b570e573)
 
+The variation in sentiments toward 14 life values among our student sample affirmed our assumption going into this project - that students' perceived life success vary and may not align with how high schools are measuring success!
 
 ## Analysis ##
 ### Logistic Regression: Identify students’ risk of dropping out ###
@@ -121,7 +126,41 @@ bys54o   | Importance of getting good education |
 
 These decision trees provide a structured framework for analyzing complex interactions between students' personal goals and the resources available to them within the school setting. Through this process, educators and counselors can gain valuable insights into which aspects of schooling and the school environment have the greatest impact on students' ability to pursue and achieve their life goals. This information can then inform targeted interventions and support strategies tailored to meet the diverse needs and aspirations of students. 
 
-Below is the decision tree that reveals interesting trends in how students perceive friendships. While all students surveyed valued strong friendships, those who believed school fosters friendships further divided into subgroups. Male students who agreed with this statement and participated in extracurricular activities placed a higher value on strong friendships compared to their non-participating counterparts. This suggests a possible link between valuing friendships and involvement in extracurricular activities among male students, though it doesn't necessarily prove that participation directly causes a stronger emphasis on friendships.
+In order to construct these decision trees, we began with a preliminary test of plotting a decision tree for each of the 14 life values:
+
+```R
+# List of life values
+vars <- c("bys54a", "bys54b", "bys54c", "bys54d", "bys54e", "bys54f", "bys54g", "bys54h", "bys54i", "bys54j", "bys54k", "bys54l", "bys54n", "bys54o")
+
+# Iterate the building and plotting of decision trees over each life value variable
+for (var in vars) {
+  # Build decision tree
+  tree <- rpart(as.formula(paste(var, "~ .")), data = baseyear)
+  
+  # Plot decision tree
+  rpart.plot(tree, main = paste("Decision Tree for", var))
+}
+```
+Out of the 14 life values, only the modelling of bys54c (Importance of having lots of money), bys54f (Importance of helping others in community), bys54k (Importance of having children), and bys54o (Importance of getting good education) produced trees with meaningful splits; in other words, the other life values are bound in perfect prediction "stumps" - or decision trees that cannot be split by other predictors. Further data exploration shows that most of these "stumps" cases owe themselves to an imbalance in differet responses (class imbalances) for the life values. Thus, two steps were taken to mitigate this.
+
+First, the output of these 14 life values variables were modified into binary codings, where 1 would indicate when and only when a student strongly believes in a life value (response = 3 - "High Importance") and 0 would indicate cases otherwise. 
+
+```R
+for(var in vars) {
+  baseyear[[var]] <- ifelse(baseyear[[var]] == 3, 1, 0)
+}
+```
+
+Next, while building decision trees and training random forest models, we also add an additional step of Random Oversampling using the ROSE package. This oversampling is applied to the training set after the data subset, consisting of one life values and predictors, had been split into a training set and a test set.
+
+```R
+# Example with bys54a
+# Perform ROSE on training data
+train_rose_54a <- ROSE(bys54a ~ ., data = train_data_54a)
+train_data_54a <- train_rose_54a$data
+```
+
+Below is the decision tree that reveals interesting trends in how students perceive friendships. Among the students surveyed who valued strong friendships, those who believed school fosters friendships further divided into subgroups. Male students who agreed with this statement and participated in extracurricular activities placed a higher value on strong friendships compared to their non-participating counterparts. This suggests a possible link between valuing friendships and involvement in extracurricular activities among male students, though it doesn't necessarily prove that participation directly causes a stronger emphasis on friendships.
 ![image](https://github.com/mandachan-727/Data400_Spring24/assets/94765975/21770b74-8ed4-48f4-aae8-3f1b31f9605b)
 
 The next decision tree shows that students who perceive school as a place to make friends and participate in extracurricular activities are more likely to value strong friendships. Overall, 100% of the students surveyed stated that they value strong friendships. However, there were further distinctions within this group. Students were asked if they agreed with the statement, "School is a place to meet friends." Those who agreed (79%) were then asked about their extracurricular involvement. Students who participated in extracurricular activities and identified as male (28% of the total sample) were the most likely group to strongly agree that having strong friendships is important. This suggests a possible link between valuing friendships and involvement in extracurricular activities among male students, though it doesn't necessarily prove that participation directly causes a stronger emphasis on friendships.
