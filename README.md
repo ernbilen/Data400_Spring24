@@ -58,8 +58,8 @@ ggplot(df, aes(x = "", y = counts, fill = category)) +
   theme(legend.position = "right") +
   labs(fill = "")
 ```
-![Distribution of Student's status by first Follow-up](https://github.com/mandachan-727/Data400_Spring24/assets/85417121/011ddb98-1675-4393-828b-b053bd00600d)
 
+![Distribution of Student's status by first Follow-up](https://github.com/mandachan-727/Data400_Spring24/assets/94765975/607a3881-0dcd-4712-a6e0-d17944f0392d)
 
 Suprisingly, the proportion of dropouts within our sample is 6% less than the 10.3% rate recorded by NCES in 2004! We'll tackle this imbalance as we move forward with analysis.
 
