@@ -1,8 +1,7 @@
-## Data sources ##
+## Data source ##
 
-Feel free to take a look at the list below for potential data sources to use in your project. This list gets updated.
+Please click to the link below in order to access the original data files that we used for this project.
 
-* [Links to many public economics data sources](https://www.amherst.edu/academiclife/departments/economics/resources)
-* [Tidy Tuesday datasets (scroll down in the page, click on years)](https://github.com/rfordatascience/tidytuesday)
-* [Dickinson Library data repository](https://libguides.dickinson.edu/dataanalytics)
+[Link to NCES's data portal](https://nces.ed.gov/datalab)
 
+After clicking the link, please launch the "Education Longitudinal Study (ELS)" dataset for both High School Seniors 2004 and High School Sophomores 2002.
