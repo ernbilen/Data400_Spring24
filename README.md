@@ -100,6 +100,35 @@ $`\
 \text{{dropout\_out}}_i = \beta_0 + \beta_1 X_{1i} + \beta_2 X_{2i} + \ldots + \beta_{73} X_{73i} + \epsilon_i
 `$
 
+To conduct the logistic regression result, we run the below code snippets:
+
+```R
+logit_full <- glm(F1DOQFLG ~ BYS14 + BYS20H + BYS20K + BYS21C + BYS21E + BYS22A + 
+                     BYS23B + BYS23C + BYS24F + BYS24G + BYS27H + BYS37 + BYS33A + 
+                     BYS33C + BYS33F + BYS33G + BYS33H + BYS33J + BYS36A + BYS41 + 
+                     BYS42 + BYS44A + BYS46B + BYS48A + BYS48B + BYS54G + BYS54H + 
+                     BYS54I + BYS54L + BYS54N + BYS56 + BYS83B + BYS85A, 
+                   data = data, family = "binomial")
+
+# Predicting using the logistic regression model
+logit_probs <- predict(logit_full, type = "response")
+logit_pred <- data.frame(logit_probs)
+
+set.seed(352)
+
+logit_pred$pred <- ifelse(logit_probs>.75, "Drop out HS", "Continue Education")
+cm_75_full <- table(logit_pred$pred, data$F1DOQFLG)
+
+metrics_75_full <- calculate_TPR_FPR(cm_75_full)
+metrics_75_full
+
+logit_pred$pred <- ifelse(logit_probs>.5, "Drop out HS", "Continue Education")
+cm_50_full <- table(logit_pred$pred, data$F1DOQFLG)
+
+metrics_50_full <- calculate_TPR_FPR(cm_50_full)
+metrics_50_full
+```
+
 The results reveal significant associations between factors, such as importance of life aspects and involvement in extracurricular activities, and students' dropout rates. Students who faced suspension or probation at least once were found to be approximately 5 times more likely to drop out, signifying a significant correlation at the 1% level. Moreover, students who dedicated 5 hours per day to watching TV/DVD on weekdays were approximately 6 times more likely to drop out, indicating a notable relationship at the 5% level. Conversely, engagement in extracurricular activities, such as participation in other clubs besides regular school activities, was associated with a 31% lower likelihood of dropping out, a significant finding at the 5% level. Students who highly valued the importance of relocating from their area demonstrated a 33.4% lower probability of dropping out compared to those who did not prioritize this factor, a finding significant at the 10% level.
 
 Below is the result table for significant factors in our model at 1% and 5% level.
