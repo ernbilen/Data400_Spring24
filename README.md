@@ -103,11 +103,7 @@ $`\
 To conduct the logistic regression result, we run the below code snippets:
 
 ```R
-logit_full <- glm(F1DOQFLG ~ BYS14 + BYS20H + BYS20K + BYS21C + BYS21E + BYS22A + 
-                     BYS23B + BYS23C + BYS24F + BYS24G + BYS27H + BYS37 + BYS33A + 
-                     BYS33C + BYS33F + BYS33G + BYS33H + BYS33J + BYS36A + BYS41 + 
-                     BYS42 + BYS44A + BYS46B + BYS48A + BYS48B + BYS54G + BYS54H + 
-                     BYS54I + BYS54L + BYS54N + BYS56 + BYS83B + BYS85A, 
+logit_full <- glm(F1DOQFLG ~ ., 
                    data = data, family = "binomial")
 
 # Predicting using the logistic regression model
