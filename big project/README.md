@@ -3,6 +3,9 @@
 ## Project Overview
 This project analyzes nearly 7,000 Yelp reviews of 78 coffee shops in Austin, TX, to uncover insights into customer perceptions and preferences. Using logistic regression, feature importance analysis, and text/sentiment analysis, we aim to identify factors that influence customer satisfaction and provide actionable recommendations for coffee shop owners to enhance service quality and business strategies.
 
+![Uploading no-revisions-d1ngW7SNehM-unsplash (1).jpg…]()
+
+
 ## Data Source
 Data for this project was sourced from a Kaggle dataset created by Sripaad Srinivasan, comprising reviews with various sentiment parameters. 
 
