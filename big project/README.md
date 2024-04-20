@@ -1,24 +1,30 @@
 # Analysis of Yelp Coffee Shop Reviews in Austin, TX
 
-## Project Overview
+## About The Project
+
+
+
 This project analyzes nearly 7,000 Yelp reviews of 78 coffee shops in Austin, TX, to uncover insights into customer perceptions and preferences. Using logistic regression, feature importance analysis, and text/sentiment analysis, we aim to identify factors that influence customer satisfaction and provide actionable recommendations for coffee shop owners to enhance service quality and business strategies.
 
-![coffee](https://github.com/tainguyen103/Data400_Spring24/assets/108405800/f4dd600e-af83-4ed4-bf35-2a44e7ded642)
+![coffee](https://github.com/tainguyen103/Data400_Spring24/assets/108405800/865b3a4a-2639-430b-bd24-59a060f569d9)
 
 
-## Data Source
+
+## Data source
+
 Data for this project was sourced from a Kaggle dataset created by Sripaad Srinivasan, comprising reviews with various sentiment parameters. 
 
 - **Kaggle Dataset:** [Yelp Coffee Reviews](https://www.kaggle.com/datasets/sripaadsrinivasan/yelp-coffee-reviews/code)
 - **Contents:** Reviews of 78 coffee shops with nearly 7,000 entries.
 - **Variables:** 20 variables across numerical, categorical, text (string), and date types.
 
-## Variables Used
+##  Variable Description
+
 The dataset encompasses a diverse range of variables, including but not limited to:
 
-- **Numerical:** Ratings, price level, review counts.
-- **Categorical:** Business attributes like Wi-Fi availability, outdoor seating.
-- **String (Text):** Review texts providing insights into customer experiences and opinions.
+- **Numerical:** `num_rating`, `rating`, `overall_sent`, `vibe_sent `, `tea_sent`, `service_sent`, etc. (sentiment scores of various categories)
+- **Categorical:** `cat_rating` (`HIGH` or `LOW`).
+- **String (Text):** `coffee_shop_name`, `review_text`, .
 - **Date:** Review submission dates, allowing temporal analysis of trends.
 
 ## Methodology
@@ -49,3 +55,9 @@ Our approach prioritizes:
 - **Bias Mitigation** to ensure impartial insights.
 - **Consideration of Business Impact** on market dynamics and competitive trends.
 - **Ethical Responsibility** in data utilization, reflecting on broader societal implications.
+
+
+## Authors
+
+- Tai Nguyen
+- Ziwei Guo
