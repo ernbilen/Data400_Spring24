@@ -1,20 +1,14 @@
 # Data Analysis Plan for Sentiment Analysis of Amazon Customer Reviews
 
-## Background
-
-E-commerce giants like Amazon employ sophisticated recommendation systems to enhance customer experience. Amazon utilizes an item-item collaborative filtering approach, capable of handling vast datasets and generating high-quality recommendations in real-time. This system predicts user preferences and "ratings" by filtering information based on item similarities.
-
 ## Project Overview
 
 This project aims to scrape and analyze customer reviews from Amazon to perform sentiment analysis. By determining the polarity scores of reviews, we will classify the sentiments as positive, neutral, or negative. This analysis will help uncover relationships between the sentiment of reviews and the ratings given by customers. Further, we will identify frequently mentioned words in reviews that correlate with positive or negative sentiments, providing actionable insights for business improvements across different industries.
 
 ## 1. Tractable Data 
 
-**Objective:** Ensure the data collected is relevant, manageable, and suitable for achieving the project goals.
-
-**Action Steps:**
-- Focus specifically on Amazon reviews, ensuring a representative sample across various product categories.
-- Establish a structured data format (e.g., JSON, CSV) that includes necessary fields such as review text, star rating, date of review, and product category.
+**Objective:** My dataset is from Kaggle:[https://www.kaggle.com/code/saurav9786/recommender-system-using-amazon-reviews](https://www.kaggle.com/datasets/kritanjalijain/amazon-reviews)
+The Amazon Review Polarity Dataset originates from a vast collection of reviews detailed in a study by J. McAuley and J. Leskovec, focusing on understanding rating dimensions through review text. Sourced from Amazon, it includes reviews spanning 18 years up to March 2013, reflecting a broad spectrum of consumer opinions and product interactions.
+- Contains 34,686,770 Amazon reviews from 6,643,669 users on 2,441,053 products, from the Stanford Network Analysis Project (SNAP). This subset contains 1,800,000 training samples and 200,000 testing samples in each polarity sentiment.
 
 ## 2. Data Retrieval 
 
@@ -22,19 +16,40 @@ This project aims to scrape and analyze customer reviews from Amazon to perform 
 
 **Action Steps:**
 - Ensure adherence to Amazon's data use policies.
-- Develop a scraping tool that efficiently handles large volumes of data while respecting privacy and legal constraints.
-- Implement error handling to manage data retrieval issues like network problems or changes in the website structure.
-- Set up a database to store retrieved data, ensuring data integrity and ease of access for subsequent analysis.
+- Eliminate all missing values or N/A values of the dataset from Kaggle. 
+- Pre-process the text data (tokenization, normalization) to prepare it for analysis.
 
-## 3. Correct Specification of the Model 
+## 3.  Exploratory data analysis
 
-**Objective:** Select and configure the appropriate NLP and sentiment analysis models to accurately interpret the sentiment of review texts.
+- **Logistic Regression:** Establishing a baseline for binary classification of sentiment (positive vs negative).
+- **Implementation:**
+  - Extract features from text using TF-IDF or count vectorizer.
+  - Apply logistic regression to model the relationship between extracted features and the binary sentiment labels.
+  - Evaluate model performance using metrics such as accuracy, precision, recall, and F1-score.
 
-**Action Steps:**
-- Choose a sentiment analysis tool, such as TextBlob, and consider integrating more sophisticated NLP models if necessary (e.g., BERT, GPT).
-- Pre-process the text data (tokenization, normalization, removal of stop words) to prepare it for analysis.
-- Determine the methodology to calculate polarity scores and classify reviews into positive, neutral, and negative sentiments.
-- Validate the model with a subset of data and adjust parameters to improve accuracy.
+- **Random Forests:** Enhancing predictive accuracy and robustness over single decision trees.
+- **Implementation:**
+  - Utilize the same feature preparation as for decision trees.
+  - Train a Random Forest model with multiple trees to improve generalization.
+  - Optimize model parameters such as number of trees and max features using grid search with cross-validation.
+  - Analyze feature importance to understand which words or attributes most influence sentiment classification.
+
+- **Sentiment Analysis Tools and Models:**
+  - Begin with a straightforward tool like **TextBlob** to quickly assess sentiment polarity and subjectivity.
+  - For more nuanced understanding and accuracy, integrate advanced NLP models such as **BERT** or **GPT**. These models can better capture contextual nuances in text, improving the accuracy of sentiment classification.
+
+- ** Polarity Score Calculation and Classification:**
+  - Use **TextBlob** to derive preliminary polarity and subjectivity scores, where polarity quantifies sentiment on a negative to positive scale, and subjectivity measures the amount of personal opinion and factual information.
+  - For complex analyses, employ models like **BERT**, which can be fine-tuned on a labeled dataset to classify sentiments more effectively into categories such as positive, neutral, and negative.
+
+- **Time-Series Analysis of Reviews:**
+  - Conduct a time-series analysis to observe trends and changes in sentiment and ratings over time for selected businesses.
+  - This can help in identifying patterns such as seasonal fluctuations in sentiment, or changes following specific events or promotions.
+
+- **Visualization of Data:**
+  - **Relationship Between Ratings and Polarity:** Create scatter plots or line graphs to visualize how ratings correlate with sentiment polarity scores across different products or time.
+  - **Word Frequency Analysis:** Utilize word clouds to visually represent the frequency of words appearing in positive and negative reviews. This helps in quickly identifying which terms are most commonly associated with each sentiment.
+  - Additional visualizations might include bar charts comparing the volume of reviews by sentiment over time or heatmaps showing the distribution of ratings.
 
 ## 4. Implications for Stakeholders 
 
