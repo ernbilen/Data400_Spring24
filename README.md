@@ -6,7 +6,7 @@
 | Office | Althouse 104 |
 | Office Hours | [calendly](https://calendly.com/bilene/office-meeting?month=2023-01) <br> M 2:30-4pm, <br> F 9-10:30am|
 | GitHub | [ernbilen](https://github.com/ernbilen) |
-
+Cole Jennings
 * **Meeting day/time**: T-F S1 1:30-2:45pm, S2 3-4:15pm @Althouse G7
 * Office hours also available by appointment.
 
