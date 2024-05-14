@@ -8,7 +8,7 @@
 | GitHub | [ernbilen](https://github.com/ernbilen) |
 
 * **Meeting day/time**: T-F S1 1:30-2:45pm, S2 3-4:15pm @Althouse G7
-* Office hours also available by appointment.
+* Office hours also available by appointment. change 2
 
 
 ## Course description ##
